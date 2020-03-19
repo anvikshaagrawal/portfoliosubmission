@@ -1,0 +1,567 @@
+
+
+/* Code for skipping content */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -60px;
+}
+
+.skip a:focus{
+  top: 0;
+  -webkit-transition: default;
+  transition: default;
+  z-index: 1;
+}
+
+/* Reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+  .skip a{
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+body{
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations */
+
+h1{
+  color: #c54e4e;
+  text-align: center;
+  font-size: 40px;
+  padding: 15px; 
+  font-family: Roboto, Helvetica, sans-serif;
+  text-shadow: 1px 1px 2px white, 0 0 1em black, 0 0 0.2em black;      
+  animation-duration: 1s;
+  animation-name: slidein; 
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 20%;
+    width: 70%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 70%;
+  }
+}
+
+h2{
+  color: #484c4e;
+  font-size: 35px;
+  text-align: center;
+  padding: 10px;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+h3{
+  color: #c54e4e;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+h4{
+  color: #c54e4e;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  margin: auto;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+p {
+  line-height: 2;
+  text-align: left;
+  padding: 0;
+  font-size: 20;
+  font-family: Roboto, Helvetica, sans-serif;;
+}
+
+#main{
+  padding: 60px;
+}
+
+#center{
+  text-align: center;
+}
+
+.intro p{
+  text-align: center;
+  background-color: #c3c4c5;
+  padding: 40px;
+}
+
+table{
+  border: 2px solid #c54e4e;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.colhead{
+background-color: #c54e4e;
+color:white;
+text-align: center;
+font-family: 'Indie Flower';
+font-size: 20px;
+padding: 8px;
+}
+
+td{
+  padding: 8px;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  background: white;
+  align-items: center;
+}
+
+#logo{
+  height: 50px;
+  padding-top: 20px;
+  padding-right: 700px;
+}
+
+.navbar{
+ display: flex;
+ flex-direction: column;
+ font-size: 20px;
+}
+
+a{
+  color:#c54e4e;
+  text-decoration: none;
+}
+
+a:hover, a:focus{
+  color: #ff6161;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+#current{
+  color: #000000;
+  text-decoration: underline;
+}
+
+footer{
+  background-color: #c54e4e;
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.socialmedia {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialmedia i {
+  padding: 10px;
+  transition: all ease-in-out 200ms;
+}
+
+.socialmedia i:hover {
+  transform: scale(1.5);
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.wol, .palat{
+  display: grid;
+  grid-template-columns: 300px 100px;
+  grid-template-rows: repeat(2, auto);
+  grid-row-gap: 15px;
+  justify-content: center;
+  align-content: center;
+}
+
+.title{
+  grid-column: 1/ span 1;
+  grid-row: 1/ span 1;
+}
+
+.content{
+  grid-column: 1/ span 1;
+  grid-row: 2/ span 1;
+}
+
+.image{
+  width: 100%;
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 1;
+  justify-content: center;
+}
+/* ufhowi */
+
+.parallax{
+  background-attachment: fixed; 
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-size: cover;
+  color: white;
+  height: 400px;                
+  background-image: url("../images/wolverine.jpg");
+  background-color: white;
+}
+
+#flip, .prallax{
+  width:100%;
+  min-height: 280px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  justify-items: center;
+  padding-left: 15%;
+  width: 80%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 1s;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  color: black;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+  padding: 50px 0;
+}
+
+
+.activity{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+} 
+
+.list{
+  text-align: left;
+  padding-left: 15%;
+  padding-right: 10%;
+}
+
+/* https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/ */
+
+.snapshots {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  float: left;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background: #fff;
+  cursor: default;
+}
+
+.snapshots img {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.snapshots .mask {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0
+  overflow: hidden;
+}
+
+.snapshots h2 {
+  color: #c54e4e;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  padding: 10px;
+  transition: all 0.5s ease-in;
+  margin: 50px;
+  opacity: 0;
+}
+
+.snapshots p {
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  transform: rotate(0.5turn);
+  transition: all 0.2s linear;
+}
+
+.snapshots .mask {
+  opacity: 0;
+  background-color: #808588(173, 94, 153, 0.4); 
+  transition: all 1s ease-in-out;
+}
+
+.snapshots:hover img { 
+  transform: scale(1.8);
+  transition: all 1s ease-in-out;
+} 
+
+.snapshots:hover .mask { 
+	opacity: 1;
+}
+
+.snapshots:hover h2 {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.snapshots:hover p {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.snapshots:hover p {
+    transition-delay: 0.1s;
+}
+
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_card */
+/* https://www.tutorialspoint.com/How-to-embed-a-video-using-HTML-code */
+/* https://www.w3schools.com/howto/howto_css_contact_form.asp */
+
+.polaroid {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.introtext {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.row h3{
+  text-align: center;
+  padding-right: 150px;
+  padding-top: 50px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c54e4e;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #c54e4e;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #ff6161;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+@media screen and (min-width: 300px){
+  h1{
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+
+  h2{
+    font-size: 1.8em;
+    line-height: 1.5em;
+  }
+
+  h3{
+    font-size: 18px;
+  }
+
+  h4{
+    font-size: 1.8em;
+    line-height: 1.5em;
+  }
+  p{
+    padding: 15px 0;
+  }
+
+  img{
+    padding: 40px 0;
+  }
+
+  .index-img{
+    width: 100px;
+    padding: 20px 0;
+  }
+
+  .descrp-logo{
+    width: 180px;
+
+  }
+
+  .wol, .palat{
+    grid-template-columns: 200px 300px;
+  }
+
+}
+
+@media screen and (min-width: 768px){
+  header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar{
+   display: flex;
+   flex-direction: row;
+  }
+
+  .navbar .bullet{
+      display: inline;
+    }
+
+  p {
+    padding: 0 95px;
+  }
+
+ .wol, .palat{
+    grid-template-columns: 500px 300px;
+  }
+
+}
+
+
+@media screen and (min-width: 1366px){
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar{
+   display: flex;
+   flex-direction: row;
+  }
+
+  p {
+    padding: 0 200px;
+  }
+
+  h3{
+    margin-left: 150px;
+  }
+  .wol, .palat{
+    grid-template-columns: 700px 500px;
+  }
+
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  h1 {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0s;
+    transition: none;
+   scroll-behavior: auto;
+  }
+  
+  html{
+  scroll-behavior: auto; 
+  }
+
+  .skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: default;
+  transition: default;
+  z-index: 1;
+  }
+
+  .skip a:focus{
+  top:0;
+  }
+}
+
+
+
+
+
+
+
