@@ -219,7 +219,6 @@ footer{
   grid-column: 2 / span 1;
   justify-content: center;
 }
-/* ufhowi */
 
 .parallax{
   background-attachment: fixed; 
@@ -279,7 +278,6 @@ footer{
   transform: rotateY(180deg);
   padding: 50px 0;
 }
-
 
 .activity{
   display: flex;
@@ -390,6 +388,9 @@ footer{
   text-align: center;
 }
 
+.polaroid img{
+	width: 300px;
+}
 .introtext {
   text-align: center;
   padding: 10px 20px;
